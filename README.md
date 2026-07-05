@@ -1,23 +1,12 @@
-# DISTRHO Cardinal
+# Umbilical
 
-*Cardinal, the Rack!*
 
-Cardinal is a free and open-source virtual modular synthesizer plugin,
-available in AudioUnit/CLAP/LV2/VST2/VST3 plugin formats and as a standalone app for FreeBSD, Linux, macOS, Windows and the Web.  
-It is based on the popular [VCV Rack](https://vcvrack.com/) but with a focus on being a fully self-contained plugin version.
+Umbilical is a free and open-source virtual modular synthesizer plugin, based on the popular [VCV Rack](https://vcvrack.com/).
+It is a fork of [DISTRHO Cardinal](https://github.com/DISTRHO/Cardinal) aimed at adding hardware controls (which we hope to integrate at some point).
 
-More specifically, this is a [DPF-based](https://github.com/DISTRHO/DPF/)
-plugin wrapper around [VCV Rack](https://github.com/VCVRack/Rack/),
-using its code directly instead of forking the project,
-with the target of having a **self-contained, fully free and open-source plugin version of Rack**.  
-See the [why section](#Why) below for the reasons Cardinal exists,
-also for frequently asked questions check this [FAQ document](docs/FAQ.md).
+Like Cardinal, Umbilical is a [DPF-based](https://github.com/DISTRHO/DPF/) plugin wrapper around [VCV Rack](https://github.com/VCVRack/Rack/) that provides a fully self-contained, free, and open-source plugin version of Rack in AudioUnit, CLAP, LV2, VST2, VST3, and standalone formats. It contains Rack, some 3rd-party modules, and internal utilities in a single binary, bypassing the official Rack library and branding.
 
-Cardinal contains Rack, some 3rd-party modules and a few internal utilities all in a single binary.  
-All "Core" modules from Rack have been replaced by Cardinal equivalents, simplified to better work for an audio plugin.
-
-Cardinal does not load external modules and does not connect to the official Rack library/store.  
-All VCV branding has been removed (to the best of our knowledge) in order to avoid any trademark issues.
+See the [why section](#Why) below for the reasons the original project exists, and check the [FAQ document](docs/FAQ.md) for frequently asked questions.
 
 
 ## Current status
