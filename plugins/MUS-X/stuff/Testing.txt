@@ -1,0 +1,42 @@
+Testing TODOs
+
+- Tooltips with correct labels and sensible units and ranges
+
+- Check output with scope and analyzer
+
+- plug/unplug module
+- mono/poly/mixed inputs
+- test mono, 3, 7, 8, 12, 16 voices
+- test all knobs
+- test all CV inputs with -10..10V & noise, mono & poly
+
+- Different VCV sample rates
+- bypass, reset, randomize
+- save & load extra settings
+
+- dark theme
+
+- validate json:
+cd ~/VCVRack/rack-library-tools
+python3 ./rack-manifest-validator.py ../ -p MUS-X
+
+
+
+
+
+
+
+Testing Oscillator:
+
+- full frequency sweep of all waveforms, osc1 and osc2
+	- check if anti-aliasing works!
+	
+- sync
+	- osc2 freq < osc1 freq       AND   osc2 freq > osc2 freq
+	- osc2 freq = osc1 freq * N   AND   osc2 freq = osc2 freq / N
+	- check if waveform is correct (check all waveforms!)
+	- check if anti-aliasing works!
+	
+- FM
+	- check if anti-aliasing works with negative frequencies: tune osc1 down, osc2 medium, fm amount up (check all waveforms!)
+	- check if sync anti-aliasing works with negative frequencies (check all waveforms!)

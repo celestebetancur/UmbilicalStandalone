@@ -1,0 +1,64 @@
+language: cpp
+matrix:
+  include:
+  - os: linux
+    dist: bionic
+  - os: osx
+    osx_image: xcode11
+  - os: windows
+    before_install:
+    - choco install make -y
+    - choco install zip -y
+addons:
+  apt:
+    packages:
+    - git
+    - gdb
+    - curl
+    - cmake
+    - libx11-dev
+    - libglu1-mesa-dev
+    - libxrandr-dev
+    - libxinerama-dev
+    - libxcursor-dev
+    - libxi-dev
+    - zlib1g-dev
+    - libasound2-dev
+    - libgtk2.0-dev
+    - libjack-jackd2-dev
+    - jq
+  homebrew:
+    packages:
+    - git
+    - wget
+    - cmake
+    - autoconf
+    - automake
+    - libtool
+    - jq
+    - python
+git:
+  submodules: true
+env:
+  global:
+  - MAKEFLAGS="-j 2"
+install:
+- mkdir -p "${HOME}"/Rack
+- pushd "${HOME}"/Rack
+- curl -o Rack-SDK.zip https://vcvrack.com/downloads/Rack-SDK-1.1.6.zip
+- unzip Rack-SDK.zip
+- popd
+script:
+- export RACK_DIR="${HOME}"/Rack/Rack-SDK
+- make dep
+- make dist
+deploy:
+  provider: releases
+  api_key:
+    secure: 3PlkChRcO1x/28hT4Zlfn9SZ/4qJjYKZw4n7F8eIsWiRaFw97w4Jt9SyPk42sq4tGusVqXxZPjW0n7CRVVyKSusktaRyuY4GG3el+dxhQLF7shFrLWN6IVlgyv/C0G/egFmMVQlDa/SYmAtzTu8v9+VJjts6n8sfnjgTykKupyhl7gb0gHkvNLLSGvI8C0GIFC+F3YLkPllVCMF8K9lEqemqNKmzZ9F5tBRJj3zYO5wjSvo+eF+2GuNnaxoopNfHPaamzKgOFgc1737o84NTehi0rWi62/3/t5Cp6xk9Mqiwo30paoQ5zq0jRxN0yjLD0Hx/jGDsVaBT934vlbZ/zUtcjTS0ND4uc9TV7T9csuf6M8cC9lRujjcsna+E5fsOJTN5kgp2R2ElLFQKOWdm90qyndidZVfuV8NfJ6ZQX5JGG0TvMlo6gO3Rh86ZqDpSTT52SI1KEn91hCCke/Uj+p6GaSfxczYm+zUcAZ5GY8BoIi+xlgwRrF2XK8TvXtPy0hq1BQ1hqhZhGJQEwBaKsqeFazInftRzDiGLquq/lDW/amP0CRWzKjmdqLgJrsZ99kBqJNGQnVCU1YqyeUZXfdg+U7WcIC7cOVihgVjFCP9WPVYT8Eb95Oo7oljuCaUdV0HkFD6Ny8FU1lBHv/MN32c5QD1WAAwBCCNsr+MWlsg=
+  file_glob: true
+  file: dist/Admiral-*-*.zip
+  skip_cleanup: true
+  on:
+    repo: wapiflapi/admiral
+    tags: true

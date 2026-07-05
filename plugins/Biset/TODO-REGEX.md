@@ -1,0 +1,31 @@
+
+- [ ] User enhancements
+	- [x] Gate output expander
+
+- [ ] Sequence types
+	- [x] `>`	Forward
+	- [x] `<`	Backward
+	- [x] `^`	Ping pong
+	- [x] `?`	Random
+	- [x] `!`	X-Random
+	- [x] `$`	Walk
+	- [x] `@`	Shuffle
+	- [ ] `&`	Shuffle 1 item at a time
+- [x] Modulators
+	- [x] `x`	Times (clone solo values)
+	- [x] `x`	Times
+	- [x] `%`	Modulo
+	- [x] `*`	Times clock
+	- [x] Modulate with single value
+	- [ ] Modulate with sequence
+- [ ] User
+	- [x] Clock
+	- [x] Reset
+	- [x] Bias
+	- [x] Play on patch opening (context menu option)
+	- [ ] Shortcuts
+		- [x] Run expression
+		- [x] Run all expressions
+		- [x] Stop expression
+		- [x] Line up / down
+		- [ ] Switch expression mode (clock / pitch)

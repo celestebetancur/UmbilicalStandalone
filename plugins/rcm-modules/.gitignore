@@ -1,0 +1,10 @@
+/build
+/dist
+/plugin.dylib
+/plugin.dll
+/plugin.so
+.DS_Store
+dep/libopenmpt-0.3.10*
+*.mod
+*.xm
+.vscode/ipch
